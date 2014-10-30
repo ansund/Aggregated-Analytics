@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <!-- 
+  // blame viktor ansund
+  // Project ID: aha-yoko-742 Project Number: 43897794223
+  // https://console.developers.google.com/project/aha-yoko-742 -->
+
+  <title>Sample YouTube Analytics API Implementation</title>
+  <link type="text/css" rel="stylesheet" href="index.css">
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="//www.google.com/jsapi"></script>
+  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=onJSClientLoad"></script>
+</head>
+
+
+<body>
+  <div id="login-container" class="pre-auth">This application requires access to your YouTube account.
+    Please <a href="#" id="login-link">authorize</a> to continue.
+  </div>
+
+  <div class="post-auth">
+    <div id="message"></div>
+
+    <div id="ContentOwnerList">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Select</th>
+            <th>Name</th>
+            <th>ID</th>
+          </tr>
+        </thead>
+        <tbody id="contentOwnerTable">
+        </tbody>
+      </table><br>
+      Start Date (yyyy-mm-dd): <input type="text" id="startDate" value="2014-09-01"><br>
+      End Date (yyyy-mm-dd): <input type="text" id="endDate" value="2014-09-30"><br>
+      <button type="button" id="runReports">Run Report For Selected COs</button>
+
+
+    </div>
+    <div id="generalReport">
+       <table border="1">
+        <thead>
+          <tr>
+            <th>Content Owner</th>
+            <th>Views</th>
+            <th>Comments</th>
+            <th>Favorites Added</th>
+            <th>Likes</th>
+            <th>Dislikes</th>
+            <th>Estimated Minutes Watched</th>
+          </tr>
+        </thead>
+        <tbody id="generalReportBody">
+          <tr id="total">
+            <td>Total</td>
+            <td id="viewsTotal"></td>
+            <td id="commentsTotal"></td>
+            <td id="favoritesAddedTotal"></td>
+            <td id="likesTotal"></td>
+            <td id="dislikesTotal"></td>
+            <td id="estimatedMinutesWatchedTotal"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
